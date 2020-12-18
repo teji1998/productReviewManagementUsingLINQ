@@ -57,5 +57,19 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId : " + data.ProductId +   "\tCount : " + data.Count );
             }
         }
+
+        /// <summary>
+        /// Obtains the product identifier and review.
+        /// </summary>
+        /// <param name="reviewList">The review list.</param>
+        public void ObtainProductIdAndReview(List<ProductReview> reviewList)
+        {
+            var obtainedRecords = reviewList.Select(data => new { ProductId = data.ProductId, Review = data.Review });
+            Console.WriteLine("\nProduct id and review : ");
+            foreach(var data in obtainedRecords)
+            {
+                Console.WriteLine("ProductId : " + data.ProductId + "\tReview " +data.Review );
+            }
+        }
     }
 }

@@ -39,6 +39,7 @@ namespace ProductReviewManagement
                 new ProductReview() { ProductId = 24,UserId = 25, Rating = 4.98, Review = "nice", isLike = true },
                 new ProductReview() { ProductId = 25,UserId = 16, Rating = 4.42, Review = "nice", isLike = true },
                 new ProductReview() { ProductId = 13,UserId = 18, Rating = 3.95,Review = "nice", isLike = true },
+                new ProductReview() { ProductId = 11,UserId = 15, Rating = 1.04,Review = "bad", isLike = true },
             };
 
             //to get values added in list
@@ -54,6 +55,9 @@ namespace ProductReviewManagement
 
             //to get count of productId in the reviews
             management.CountOfReviewByProductId(productReviewList);
+
+            //to get productId and reviews from records
+            management.ObtainProductIdAndReview(productReviewList);
 
         }
     }
