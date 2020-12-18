@@ -72,6 +72,10 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// Skips the top five records and displays the remaining records
+        /// </summary>
+        /// <param name="reviewList">The review list.</param>
         public void skipTopFiveRecords(List<ProductReview> reviewList)
         {
             var records = (from productData in reviewList
