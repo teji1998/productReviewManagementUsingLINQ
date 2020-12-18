@@ -55,7 +55,7 @@ namespace ProductReviewManagement
         /// </returns>
         public string ToString()
         {
-            return "ProductId : " + ProductId + "\t UserId : " + UserId + "\t Rating : " + Rating + " \tReview : " + Review + "\t isLike : " + isLike ;
+            return "ProductId : " + ProductId + "\t UserId : " + UserId + "\t Rating : " + Rating + "\t Review : " + Review + "\t isLike : " + isLike ;
         }
     }
 }
