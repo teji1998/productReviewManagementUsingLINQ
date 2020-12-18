@@ -42,5 +42,15 @@ namespace ProductReviewManagement
             }
 
         }
+
+        public void CountOfReviewByProductId(List<ProductReview> reviewlist)
+        {
+            var reviewRecords = reviewlist.GroupBy(data => data.ProductId).Select(data => new { ProductId = data.Key, Count = data.Count() });
+            Console.WriteLine("\nCount of review by product id : ");
+            foreach(var data in reviewRecords)
+            {
+                Console.WriteLine("ProductId : " + data.ProductId +   "\tCount : " + data.Count );
+            }
+        }
     }
 }

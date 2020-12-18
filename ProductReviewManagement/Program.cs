@@ -52,6 +52,8 @@ namespace ProductReviewManagement
             //to get records having rating greater than three
             management.GettingRecordsHavingRatingGreaterThanThree(productReviewList);
 
+            management.CountOfReviewByProductId(productReviewList);
+
         }
     }
 }
