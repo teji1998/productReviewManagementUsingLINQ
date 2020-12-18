@@ -49,7 +49,8 @@ namespace ProductReviewManagement
         /// <param name="reviewlist">The reviewlist.</param>
         public void CountOfReviewByProductId(List<ProductReview> reviewlist)
         {
-            var reviewRecords = reviewlist.GroupBy(data => data.ProductId).Select(data => new { ProductId = data.Key, Count = data.Count() });
+            var reviewRecords = reviewlist.GroupBy(data => data.ProductId)
+                                    .Select(data => new { ProductId = data.Key, Count = data.Count() });
             Console.WriteLine("\nCount of review by product id : ");
             foreach(var data in reviewRecords)
             {
