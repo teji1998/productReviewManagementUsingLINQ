@@ -19,8 +19,24 @@ namespace ProductReviewManagement
             var highestRatingRecord = (from productData in reviewList
                                        orderby productData.Rating descending
                                        select productData).Take(3);
-            Console.WriteLine("The top three records are : ");
+            Console.WriteLine("\nThe top three records are : ");
             foreach(var data in highestRatingRecord)
+            {
+                Console.WriteLine(data.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Getting the records having rating greater than three.
+        /// </summary>
+        /// <param name="reviewList">The review list.</param>
+        public void GettingRecordsHavingRatingGreaterThanThree(List<ProductReview> reviewList)
+        {
+            var obtainedRecords = (from productData in reviewList
+                                   where (productData.ProductId == 1 || productData.ProductId == 4 || productData.ProductId == 9) && productData.Rating > 3
+                                   select productData);
+            Console.WriteLine("\nThe records having rating greater than 3 are : ");
+            foreach(var data in obtainedRecords)
             {
                 Console.WriteLine(data.ToString());
             }

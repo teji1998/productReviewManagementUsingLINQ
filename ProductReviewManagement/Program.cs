@@ -49,6 +49,9 @@ namespace ProductReviewManagement
             //to get top three records based on highest rating
             management.GetTopThreeRecordsBasedOnRating(productReviewList);
 
+            //to get records having rating greater than three
+            management.GettingRecordsHavingRatingGreaterThanThree(productReviewList);
+
         }
     }
 }
