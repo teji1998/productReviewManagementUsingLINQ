@@ -60,7 +60,10 @@ namespace ProductReviewManagement
             management.ObtainProductIdAndReview(productReviewList);
 
             //to skip top five records and display the records
-            management.skipTopFiveRecords(productReviewList);
+            management.SkipTopFiveRecords(productReviewList);
+
+            //To get review and productId from records
+            management.SelectProductIdAndReviewFromRecords(productReviewList);
 
         }
     }

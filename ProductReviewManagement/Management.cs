@@ -76,7 +76,7 @@ namespace ProductReviewManagement
         /// Skips the top five records and displays the remaining records
         /// </summary>
         /// <param name="reviewList">The review list.</param>
-        public void skipTopFiveRecords(List<ProductReview> reviewList)
+        public void SkipTopFiveRecords(List<ProductReview> reviewList)
         {
             var records = (from productData in reviewList
                            select productData).Skip(5);
@@ -84,6 +84,21 @@ namespace ProductReviewManagement
             foreach(var data in records)
             {
                 Console.WriteLine(data.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Selects the product identifier and review from records.
+        /// </summary>
+        /// <param name="reviewList">The review list.</param>
+        public void SelectProductIdAndReviewFromRecords(List<ProductReview> reviewList)
+        {
+            var select = from productData in reviewList
+                         select (productData.ProductId, productData.Review);
+            Console.WriteLine("\nProduct id and review : ");
+            foreach (var data in select)
+            {
+                Console.WriteLine("ProductId : " + data.ProductId + "\tReview : " + data.Review);
             }
         }
     }
