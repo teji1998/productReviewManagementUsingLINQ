@@ -4,17 +4,17 @@ using System.Text;
 
 namespace ProductReviewManagement
 {
-    class ProductReview
+    public class ProductReview
     {
         public int ProductId { get; set; }
         public int UserId { get; set; }
-        public int Rating { get; set; }
+        public double Rating { get; set; }
         public string Review { get; set; }
         public bool isLike { get; set; }
 
-        public string Tostring()
+        public string ToString()
         {
-            return "ProductId : " + ProductId + " UserId : " + UserId + " Rating : " + Rating + " Review : " + Review + "isLike : " + isLike ;
+            return "ProductId : " + ProductId + "\t UserId : " + UserId + "\t Rating : " + Rating + " \tReview : " + Review + "\t isLike : " + isLike ;
         }
     }
 }
