@@ -59,6 +59,8 @@ namespace ProductReviewManagement
             //to get productId and reviews from records
             management.ObtainProductIdAndReview(productReviewList);
 
+            management.skipTopFiveRecords(productReviewList);
+
         }
     }
 }

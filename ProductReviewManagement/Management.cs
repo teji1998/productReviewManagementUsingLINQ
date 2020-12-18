@@ -71,5 +71,16 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId : " + data.ProductId + "\tReview " +data.Review );
             }
         }
+
+        public void skipTopFiveRecords(List<ProductReview> reviewList)
+        {
+            var records = (from productData in reviewList
+                           select productData).Skip(5);
+            Console.WriteLine("\nDisplaying the records after skipping top five records : ");
+            foreach(var data in records)
+            {
+                Console.WriteLine(data.ToString());
+            }
+        }
     }
 }
