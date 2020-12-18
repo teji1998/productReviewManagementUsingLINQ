@@ -43,6 +43,10 @@ namespace ProductReviewManagement
 
         }
 
+        /// <summary>
+        /// Counts the of review by product id.
+        /// </summary>
+        /// <param name="reviewlist">The reviewlist.</param>
         public void CountOfReviewByProductId(List<ProductReview> reviewlist)
         {
             var reviewRecords = reviewlist.GroupBy(data => data.ProductId).Select(data => new { ProductId = data.Key, Count = data.Count() });
