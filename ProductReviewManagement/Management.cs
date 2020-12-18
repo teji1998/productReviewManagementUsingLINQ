@@ -88,7 +88,7 @@ namespace ProductReviewManagement
         }
 
         /// <summary>
-        /// Selects the product identifier and review from records.
+        /// Selects the product identifier and review from record.
         /// </summary>
         /// <param name="reviewList">The review list.</param>
         public void SelectProductIdAndReviewFromRecords(List<ProductReview> reviewList)
