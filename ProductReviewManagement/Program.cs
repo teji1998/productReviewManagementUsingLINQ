@@ -10,6 +10,7 @@ namespace ProductReviewManagement
             Console.WriteLine("Welcome to product review management using LINQ !!!");
 
             Management management = new Management();
+            DataTableManagement dataTableManagement = new DataTableManagement();
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
                 new ProductReview() { ProductId = 1, UserId = 1,  Rating = 4.2, Review = "Good", isLike = false },
@@ -64,6 +65,9 @@ namespace ProductReviewManagement
 
             //To get review and productId from records
             management.SelectProductIdAndReviewFromRecords(productReviewList);
+
+            //To retrieve records where islike value is true
+            dataTableManagement.ObtainRecordsBasedOnIsLikeValue();
 
         }
     }
