@@ -49,6 +49,9 @@ namespace ProductReviewManagement
             dataTable.Rows.Add(11, 10, 3.56d, "Nice", true);
         }
 
+        /// <summary>
+        /// Obtains the records based on is like value.
+        /// </summary>
         public void ObtainRecordsBasedOnIsLikeValue()
         {
             var records = from reviews in dataTable.AsEnumerable()
@@ -62,6 +65,9 @@ namespace ProductReviewManagement
 
         }
 
+        /// <summary>
+        /// Obtains the average rating by product identifier.
+        /// </summary>
         public void ObtainAverageRatingByProductID()
         {
             var Data = dataTable.AsEnumerable()
@@ -73,6 +79,9 @@ namespace ProductReviewManagement
             }
         }
 
+        /// <summary>
+        /// Obtains the review message as nice.
+        /// </summary>
         public void ObtainReviewMessageAsNice()
         {
             var records = from review in dataTable.AsEnumerable()
