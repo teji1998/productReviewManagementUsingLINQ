@@ -8,8 +8,7 @@ namespace ProductReviewManagement
 {
     public class Management
     {
-        DataTable dataTable = new DataTable();
-
+        
         public Management()
         {
            
