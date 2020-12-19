@@ -63,7 +63,10 @@ namespace ProductReviewManagement
             //to skip top five records and display the records
             management.SkipTopFiveRecords(productReviewList);
 
-            //To get review and productId from records
+
+            //Using datatable
+
+            //To get review and productId from records in datatable
             management.SelectProductIdAndReviewFromRecords(productReviewList);
 
             //To retrieve records where islike value is true
@@ -73,7 +76,10 @@ namespace ProductReviewManagement
             dataTableManagement.ObtainAverageRatingByProductID();
 
             //to get records where review message is nice
-            dataTableManagement.ObtainReviewMessageAsNice();
+            dataTableManagement.ObtainRecordsBasedOnReviewMessage();
+
+            //to get records having user id = 10 based on rating
+            dataTableManagement.ObtainRecordsForUserIdBasedOnRating();
 
         }
     }

@@ -47,6 +47,10 @@ namespace ProductReviewManagement
             dataTable.Rows.Add(25, 19, 4.5d, "Nice", true);
             dataTable.Rows.Add(13, 25, 5d, "Good", true);
             dataTable.Rows.Add(11, 10, 3.56d, "Nice", true);
+            dataTable.Rows.Add(10, 10, 5d, "Best", true);
+            dataTable.Rows.Add(23, 10, 5d, "Bad", true);
+            dataTable.Rows.Add(14, 10, 5d, "Nice", false);
+            dataTable.Rows.Add(21, 10, 5d, "Good", true);
         }
 
         /// <summary>
@@ -73,6 +77,7 @@ namespace ProductReviewManagement
             var Data = dataTable.AsEnumerable()
                 .GroupBy(x => x.Field<int>("ProductId"))
                         .Select(x => new { ProductId = x.Key, Average = x.Average(p => p.Field<double>("Rating")) });
+            Console.WriteLine("\nDisplays average based on rating: ");
             foreach (var data in Data)
             {
                 Console.WriteLine("Product Id: " + data.ProductId + " " + "Average: " + data.Average);
@@ -82,15 +87,32 @@ namespace ProductReviewManagement
         /// <summary>
         /// Obtains the review message as nice.
         /// </summary>
-        public void ObtainReviewMessageAsNice()
+        public void ObtainRecordsBasedOnReviewMessage()
         {
             var records = from review in dataTable.AsEnumerable()
-                       where review.Field<string>("Review").Equals("Nice")
-                       select review;
-
+                          where review.Field<string>("Review").Equals("Nice")
+                          select review;
+            Console.WriteLine("\nDisplays records having review message as nice : ");
             foreach (var data in records)
             {
                 Console.WriteLine($"ProductID- {data.ItemArray[0]} UserID- {data.ItemArray[1]} Rating- {data.ItemArray[2]} Review- {data.ItemArray[3]} isLike- {data.ItemArray[4]}");
+            }
+        }
+
+        /// <summary>
+        /// Obtains the records for user identifier based on rating.
+        /// </summary>
+        public void ObtainRecordsForUserIdBasedOnRating()
+        {
+            var records = from review in dataTable.AsEnumerable()
+                          where review.Field<int>("UserId").Equals(10)
+                          orderby review.Field<double>("Rating")
+                          select review;
+            Console.WriteLine("\nDisplays records having user id as 10 : ");
+
+            foreach (var data in records)
+            {
+                Console.WriteLine($"ProductId- {data.ItemArray[0]} UserID- {data.ItemArray[1]} Rating- {data.ItemArray[2]} Review- {data.ItemArray[3]} isLike- {data.ItemArray[4]}");
             }
         }
     }
