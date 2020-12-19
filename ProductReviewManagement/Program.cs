@@ -69,6 +69,9 @@ namespace ProductReviewManagement
             //To retrieve records where islike value is true
             dataTableManagement.ObtainRecordsBasedOnIsLikeValue();
 
+            //to get average of rating by product id
+            dataTableManagement.AverageRatingByProductID();
+
         }
     }
 }
