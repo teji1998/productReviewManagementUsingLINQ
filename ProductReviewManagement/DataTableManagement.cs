@@ -62,7 +62,7 @@ namespace ProductReviewManagement
 
         }
 
-        public void AverageRatingByProductID()
+        public void ObtainAverageRatingByProductID()
         {
             var Data = dataTable.AsEnumerable()
                 .GroupBy(x => x.Field<int>("ProductId"))
@@ -70,6 +70,18 @@ namespace ProductReviewManagement
             foreach (var data in Data)
             {
                 Console.WriteLine("Product Id: " + data.ProductId + " " + "Average: " + data.Average);
+            }
+        }
+
+        public void ObtainReviewMessageAsNice()
+        {
+            var records = from review in dataTable.AsEnumerable()
+                       where review.Field<string>("Review").Equals("Nice")
+                       select review;
+
+            foreach (var data in records)
+            {
+                Console.WriteLine($"ProductID- {data.ItemArray[0]} UserID- {data.ItemArray[1]} Rating- {data.ItemArray[2]} Review- {data.ItemArray[3]} isLike- {data.ItemArray[4]}");
             }
         }
     }

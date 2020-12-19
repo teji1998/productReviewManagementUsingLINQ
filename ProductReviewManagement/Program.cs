@@ -70,7 +70,10 @@ namespace ProductReviewManagement
             dataTableManagement.ObtainRecordsBasedOnIsLikeValue();
 
             //to get average of rating by product id
-            dataTableManagement.AverageRatingByProductID();
+            dataTableManagement.ObtainAverageRatingByProductID();
+
+            //to get records where review message is nice
+            dataTableManagement.ObtainReviewMessageAsNice();
 
         }
     }
